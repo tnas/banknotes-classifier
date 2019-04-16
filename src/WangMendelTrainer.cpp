@@ -1,11 +1,18 @@
 #include "WangMendelTrainer.h"
 
-WangMendelTrainer::WangMendelTrainer(String file)
+WangMendelTrainer::WangMendelTrainer(TrainingBasePreprocessor preProcessor)
 {
-    this->dataFile = file;
+    this->preProcessor = preProcessor;
 }
 
 WangMendelTrainer::~WangMendelTrainer()
 {
-
 }
+
+vector<FuzzyRule> WangMendelTrainer::execute()
+{
+    vector<FuzzyRule> fuzzyRules;
+
+    return fuzzyRules;
+}
+

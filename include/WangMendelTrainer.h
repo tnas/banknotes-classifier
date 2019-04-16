@@ -2,17 +2,20 @@
 #define WANGMENDELTRAINER_H
 
 #include <string>
+#include <vector>
+#include <FuzzyRule.h>
+#include <TrainingBasePreprocessor.h>
 
 using namespace std;
 
 class WangMendelTrainer
 {
-    string dataFile;
+    TrainingBasePreprocessor preProcessor;
 
     public:
-        WangMendelTrainer(String file);
+        WangMendelTrainer(TrainingBasePreprocessor preProcessor);
         virtual ~WangMendelTrainer();
-
+        vector<FuzzyRule> execute();
 };
 
 #endif // WANGMENDELTRAINER_H

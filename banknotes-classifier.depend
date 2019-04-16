@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1555443913 source:c:\users\140688330213\documents\my-systems\banknotes-classifier\src\fuzzypartition.cpp
+	"FuzzyPartition.h"
+	<limits>
+	<iostream>
+
+1555443727 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\fuzzypartition.h
+	<LinguisticConfiguration.h>
+
+1555438530 source:c:\users\140688330213\documents\my-systems\banknotes-classifier\src\wangmendeltrainer.cpp
+	"WangMendelTrainer.h"
+
+1555434912 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\wangmendeltrainer.h
+	<string>
+	<vector>
+	<FuzzyRule.h>
+	<TrainingBasePreprocessor.h>
+
+1555440568 source:c:\users\140688330213\documents\my-systems\banknotes-classifier\main.cpp
+	<iostream>
+	<TrainingBasePreprocessor.h>
+	<WangMendelTrainer.h>
+
+1555427014 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\linguisticterm.h
+
+1555429682 source:c:\users\140688330213\documents\my-systems\banknotes-classifier\src\fuzzyrule.cpp
+	"FuzzyRule.h"
+
+1555439271 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\fuzzyrule.h
+	<LinguisticConfiguration.h>
+
+1555440983 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\trainingbasepreprocessor.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	<LinguisticConfiguration.h>
+	<FuzzyPartition.h>
+
+1555437538 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\trainingbaselayout.h
+
+1555440574 c:\users\140688330213\documents\my-systems\banknotes-classifier\include\linguisticconfiguration.h
+
+1555440616 source:c:\users\140688330213\documents\my-systems\banknotes-classifier\src\trainingbasepreprocessor.cpp
+	"TrainingBasePreprocessor.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
