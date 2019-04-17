@@ -11,11 +11,15 @@ using namespace std;
 class WangMendelTrainer
 {
     TrainingBasePreprocessor preProcessor;
+    vector<FuzzyRule> fuzzyRules;
 
     public:
         WangMendelTrainer(TrainingBasePreprocessor preProcessor);
         virtual ~WangMendelTrainer();
-        vector<FuzzyRule> execute();
+        void generateCompleteRulesBase();
+        void refineRulesBase();
+        vector<FuzzyRule> getFuzzyRules();
+        void displayRules();
 };
 
 #endif // WANGMENDELTRAINER_H

@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 
+static FuzzyPartition macroPartitions[Variable::length];
+
 TrainingBasePreprocessor::TrainingBasePreprocessor()
 {
 
@@ -21,11 +23,10 @@ TrainingBasePreprocessor::~TrainingBasePreprocessor()
 {
 }
 
-void TrainingBasePreprocessor::run()
+void TrainingBasePreprocessor::scanTrainingBase()
 {
     ifstream dataFile(this->fileName);
     string line;
-    FuzzyPartition macroPartitions[Variable::length];
 
     if (dataFile.is_open())
     {
@@ -52,11 +53,11 @@ void TrainingBasePreprocessor::run()
     }
 
     dataFile.close();
+}
 
-    this->trainingAuthentics = this->numberOfAuthentics *
-        TRAINING_PERCENTAGE;
-    this->trainingFalsifieds = this->numberOfFalsifieds *
-        TRAINING_PERCENTAGE;
+map<Variable, vector<FuzzyPartition>> TrainingBasePreprocessor::createSpacePartition()
+{
+    map<Variable, vector<FuzzyPartition>> fuzzyPartitions;
 
     int linguisticTerm = -1;
     for (int var = Variable::variance; var < Variable::length; ++var)
@@ -73,14 +74,13 @@ void TrainingBasePreprocessor::run()
                 macroPartitions[var].getCentralPoint(), macroPartitions[var].getInferiorLimit());
         variablePartitions.push_back(secondPartition);
 
-        this->fuzzyPartitions.insert(
+        fuzzyPartitions.insert(
             pair<Variable, vector<FuzzyPartition>>(static_cast<Variable>(var), variablePartitions));
-
-        cout << "Variable: " << var << endl;
-        firstPartition.display();
-        secondPartition.display();
     }
+
+    return fuzzyPartitions;
 }
+
 
 string TrainingBasePreprocessor::getBaseFileName()
 {

@@ -21,13 +21,13 @@ class TrainingBasePreprocessor
     unsigned int numberOfFalsifieds;
     unsigned int trainingAuthentics;
     unsigned int trainingFalsifieds;
-    map<Variable, vector<FuzzyPartition>> fuzzyPartitions;
 
     public:
         TrainingBasePreprocessor();
         TrainingBasePreprocessor(string baseFile, unsigned int numberOfVars);
         virtual ~TrainingBasePreprocessor();
-        void run();
+        void scanTrainingBase();
+        map<Variable, vector<FuzzyPartition>> createSpacePartition();
         string getBaseFileName();
         unsigned int getNumberOfRegisters();
         unsigned int getNumberOfAuthentics();

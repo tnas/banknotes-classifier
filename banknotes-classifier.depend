@@ -47,3 +47,57 @@
 	<fstream>
 	<sstream>
 
+1555502405 source:/home/thiago/projects/banknotes-classifier/src/FuzzyPartition.cpp
+	"FuzzyPartition.h"
+	<limits>
+	<iostream>
+
+1555502405 /home/thiago/projects/banknotes-classifier/include/FuzzyPartition.h
+	<LinguisticConfiguration.h>
+
+1555502405 /home/thiago/projects/banknotes-classifier/include/LinguisticConfiguration.h
+
+1555537076 source:/home/thiago/projects/banknotes-classifier/src/FuzzyRule.cpp
+	"FuzzyRule.h"
+	<iostream>
+	<cstdlib>
+	<limits>
+
+1555532519 /home/thiago/projects/banknotes-classifier/include/FuzzyRule.h
+	<LinguisticConfiguration.h>
+	<FuzzyPartition.h>
+	<vector>
+	<algorithm>
+
+1555537153 source:/home/thiago/projects/banknotes-classifier/src/WangMendelTrainer.cpp
+	"WangMendelTrainer.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<map>
+	<FuzzyPartition.h>
+
+1555533383 /home/thiago/projects/banknotes-classifier/include/WangMendelTrainer.h
+	<string>
+	<vector>
+	<FuzzyRule.h>
+	<TrainingBasePreprocessor.h>
+
+1555505981 /home/thiago/projects/banknotes-classifier/include/TrainingBasePreprocessor.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	<LinguisticConfiguration.h>
+	<FuzzyPartition.h>
+
+1555534063 source:/home/thiago/projects/banknotes-classifier/main.cpp
+	<TrainingBasePreprocessor.h>
+	<WangMendelTrainer.h>
+
+1555533338 source:/home/thiago/projects/banknotes-classifier/src/TrainingBasePreprocessor.cpp
+	"TrainingBasePreprocessor.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
