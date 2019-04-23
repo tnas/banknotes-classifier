@@ -14,6 +14,7 @@ class WangMendelTrainer
     vector<FuzzyRule> fuzzyRules;
 
     public:
+        WangMendelTrainer();
         WangMendelTrainer(TrainingBasePreprocessor preProcessor);
         virtual ~WangMendelTrainer();
         void generateCompleteRulesBase();

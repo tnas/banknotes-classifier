@@ -2,11 +2,13 @@
 #define TRAININGBASEPREPROCESSOR_H
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <map>
 #include <LinguisticConfiguration.h>
 #include <FuzzyPartition.h>
+#include <InputPattern.h>
 
 #define TRAINING_PERCENTAGE 0.8
 
@@ -28,6 +30,7 @@ class TrainingBasePreprocessor
         virtual ~TrainingBasePreprocessor();
         void scanTrainingBase();
         map<Variable, vector<FuzzyPartition>> createSpacePartition();
+        vector<InputPattern> getTrainingPattern();
         string getBaseFileName();
         unsigned int getNumberOfRegisters();
         unsigned int getNumberOfAuthentics();

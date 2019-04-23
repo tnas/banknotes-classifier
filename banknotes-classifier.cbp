@@ -35,12 +35,14 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="data/bank-authentication-data.txt" />
+		<Unit filename="include/FuzzyClassifier.h" />
 		<Unit filename="include/FuzzyPartition.h" />
 		<Unit filename="include/FuzzyRule.h" />
 		<Unit filename="include/LinguisticConfiguration.h" />
 		<Unit filename="include/TrainingBasePreprocessor.h" />
 		<Unit filename="include/WangMendelTrainer.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/FuzzyClassifier.cpp" />
 		<Unit filename="src/FuzzyPartition.cpp" />
 		<Unit filename="src/FuzzyRule.cpp" />
 		<Unit filename="src/TrainingBasePreprocessor.cpp" />

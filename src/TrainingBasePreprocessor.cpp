@@ -52,6 +52,12 @@ void TrainingBasePreprocessor::scanTrainingBase()
         }
     }
 
+    this->trainingAuthentics = this->numberOfAuthentics *
+        TRAINING_PERCENTAGE;
+
+    this->trainingFalsifieds = this->numberOfFalsifieds *
+        TRAINING_PERCENTAGE;
+
     dataFile.close();
 }
 
@@ -81,6 +87,50 @@ map<Variable, vector<FuzzyPartition>> TrainingBasePreprocessor::createSpaceParti
     return fuzzyPartitions;
 }
 
+vector<InputPattern> TrainingBasePreprocessor::getTrainingPattern()
+{
+    vector<InputPattern> trainingBase;
+    ifstream dataFile(this->fileName);
+    string line;
+//    unsigned int authentics, falsifieds;
+//    authentics = falsifieds = 0;
+
+    if (dataFile.is_open())
+    {
+        while (getline(dataFile, line))
+        {
+//            if (authentics >= this->trainingAuthentics && falsifieds >= this->trainingFalsifieds)
+//                break;
+
+            stringstream ssin(line);
+            unsigned int rSize = 0;
+            string token;
+            string tokens[Variable::length + 1];
+
+            while (getline(ssin, token, ','))
+                tokens[rSize++] = token;
+
+            unsigned int output = stoi(tokens[Variable::length]);
+
+            InputPattern input(stod(tokens[Variable::variance]), stod(tokens[Variable::skewness]),
+                stod(tokens[Variable::curtosis]), stod(tokens[Variable::entropy]), output);
+            trainingBase.push_back(input);
+
+//            if (output == Consequent::authentic && output < this->trainingAuthentics)
+//            {
+//                ++authentics;
+//            }
+//            else if (output == Consequent::falsified && output < this->trainingFalsifieds)
+//            {
+//                ++falsifieds;
+//            }
+        }
+
+        dataFile.close();
+    }
+
+    return trainingBase;
+}
 
 string TrainingBasePreprocessor::getBaseFileName()
 {

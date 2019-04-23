@@ -5,6 +5,11 @@
 #include <map>
 #include <FuzzyPartition.h>
 
+WangMendelTrainer::WangMendelTrainer()
+{
+
+}
+
 WangMendelTrainer::WangMendelTrainer(TrainingBasePreprocessor preProcessor)
 {
     this->preProcessor = preProcessor;
@@ -34,8 +39,6 @@ FuzzyPartition getHighestDegreePartition(vector<FuzzyPartition> partitions, doub
 
 void WangMendelTrainer::generateCompleteRulesBase()
 {
-    vector<FuzzyRule> completeFuzzyRules;
-
     this->preProcessor.scanTrainingBase();
     map<Variable, vector<FuzzyPartition>> spacePartition = this->preProcessor.createSpacePartition();
     this->preProcessor.display();
